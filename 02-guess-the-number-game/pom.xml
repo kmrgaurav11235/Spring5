@@ -15,6 +15,30 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- We keep all version variables in the parent pom. Ideally children pom.xml
+        should not have any version. Only the groupId and artifactId. -->
+        <logback.version>1.2.3</logback.version>
+        <spring.version>5.3.4</spring.version>
     </properties>
 
+    <!-- dependencyManagement tag is used in the pom to help manage dependency across the children. -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 </project>
