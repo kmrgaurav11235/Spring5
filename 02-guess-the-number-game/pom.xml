@@ -21,6 +21,7 @@
         should not have any version. Only the groupId and artifactId. -->
         <logback.version>1.2.3</logback.version>
         <spring.version>5.3.4</spring.version>
+        <annotation-api.version>1.3.2</annotation-api.version>
     </properties>
 
     <!-- dependencyManagement tag is used in the pom to help manage dependency across the children. -->
@@ -38,7 +39,13 @@
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-
+            <!-- Annotation API -->
+            <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>${annotation-api.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
